@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  web:
+    image: nodered/node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./communication-service:/data
