@@ -1,0 +1,242 @@
+[
+    {
+        "id": "3109804fac86dd9d",
+        "type": "tab",
+        "label": "Hello World",
+        "disabled": false,
+        "info": "# Este é um exemplo de impreção de mensagem",
+        "env": []
+    },
+    {
+        "id": "5827c1fac1ab769b",
+        "type": "tab",
+        "label": "Criando Condicionais",
+        "disabled": false,
+        "info": "# Este e um exemplo de uma ultilização de condicionais",
+        "env": []
+    },
+    {
+        "id": "a6865870c54d54b3",
+        "type": "inject",
+        "z": "3109804fac86dd9d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Hello World",
+        "payload": "",
+        "payloadType": "str",
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "9922025773986eef"
+            ]
+        ]
+    },
+    {
+        "id": "9922025773986eef",
+        "type": "debug",
+        "z": "3109804fac86dd9d",
+        "name": "Imprimindo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "879a4597cc8cf8a9",
+        "type": "function",
+        "z": "5827c1fac1ab769b",
+        "name": "function 1",
+        "func": "const temperatura = {\n    mensagem: 'Nevando',\n    cor : 'Azul'\n}\nmsg.payload = temperatura \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 360,
+        "wires": [
+            [
+                "58b35b743d2d2a31"
+            ]
+        ]
+    },
+    {
+        "id": "58b35b743d2d2a31",
+        "type": "debug",
+        "z": "5827c1fac1ab769b",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3dee91b953597942",
+        "type": "switch",
+        "z": "5827c1fac1ab769b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1",
+                "vt": "num",
+                "v2": "10",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "11",
+                "vt": "num",
+                "v2": "20",
+                "v2t": "num"
+            },
+            {
+                "t": "gt",
+                "v": "21",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 510,
+        "y": 320,
+        "wires": [
+            [
+                "879a4597cc8cf8a9"
+            ],
+            [
+                "2faeca1af20596c6"
+            ],
+            [
+                "45c52f0bc09732f9"
+            ],
+            [
+                "0a62a4352a1a24fe"
+            ]
+        ]
+    },
+    {
+        "id": "f2a3e1a7bc40e7e8",
+        "type": "inject",
+        "z": "5827c1fac1ab769b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "25",
+        "payloadType": "num",
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "3dee91b953597942"
+            ]
+        ]
+    },
+    {
+        "id": "2faeca1af20596c6",
+        "type": "function",
+        "z": "5827c1fac1ab769b",
+        "name": "function 2",
+        "func": "const temperatura = {\n    mensagem: 'Está Frio ...',\n    cor : 'Azul'\n}\nmsg.payload = temperatura \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 440,
+        "wires": [
+            [
+                "58b35b743d2d2a31"
+            ]
+        ]
+    },
+    {
+        "id": "45c52f0bc09732f9",
+        "type": "function",
+        "z": "5827c1fac1ab769b",
+        "name": "function 3",
+        "func": "const temperatura = {\n    mensagem: 'O clima está Ameno',\n    cor : 'Amarelo'\n}\nmsg.payload = temperatura \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 520,
+        "wires": [
+            [
+                "58b35b743d2d2a31"
+            ]
+        ]
+    },
+    {
+        "id": "0a62a4352a1a24fe",
+        "type": "function",
+        "z": "5827c1fac1ab769b",
+        "name": "function 4",
+        "func": "const temperatura = {\n    mensagem: 'O clima está Quente',\n    cor : 'Vermelho'\n}\nmsg.payload = temperatura \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 600,
+        "wires": [
+            [
+                "58b35b743d2d2a31"
+            ]
+        ]
+    }
+]
