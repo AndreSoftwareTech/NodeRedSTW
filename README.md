@@ -20,20 +20,15 @@ Sua interface gráfica intuitiva permite que você conecte dispositivos, APIs e 
 
 ## Como Começar
 
-1. **Instalação:** Siga as instruções de instalação no [site oficial do Node-RED](https://nodered.org/docs/getting-started/installation).
+1. **Instalação:** voce pode consuar o [site oficial do Node-RED]( https://nodered.org/docs/getting-started/installation](https://nodered.org/ ).
 
-2. **Execução:** Inicie o Node-RED após a instalação.
+2. **Execução:** Inicie o Node-RED apartir do aquivo docker compose com o seguinte comando .
+  
+4. ``` docker-compose up```
 
-   ```bash
-   node-red
-   ```
+5. **Acesse:** Abra seu navegador e acesse [http://localhost:1880](http://localhost:1880) para começar a criar fluxos.
 
-3. **Acesse:** Abra seu navegador e acesse [http://localhost:1880](http://localhost:1880) para começar a criar fluxos.
 
-## Exemplos de Uso
 
-- [Automatização Residencial](https://github.com/exemplo/automacao-residencial): Exemplo de uso do Node-RED para automatizar dispositivos em casa.
-
-- [Monitoramento de Sensores IoT](https://github.com/exemplo/monitoramento-iot): Demonstração de como utilizar o Node-RED para monitorar e visualizar dados de sensores IoT.
 
 
